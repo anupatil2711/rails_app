@@ -1,0 +1,10 @@
+<%= render "header"  %>
+<% @city1_details.each do |d| %> 
+  <div class="card" style=" width: 18rem; ">
+  	<div class="card-body">
+    	<h5 class="card-title">Order details</h5>
+    	<p class="card-text"><%= d %></p>
+    	<%= link_to "Go Back",root_path , class:"btn btn-primary" %>
+  	</div>
+  </div>
+<% end %>

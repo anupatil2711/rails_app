@@ -1,0 +1,15 @@
+<%= render "header" %>
+<h1 style="margin-left: 130px; padding-top: 30px; font-family: Monaco;">Report to display city and its orders count...</h1>
+<% @city.each do |name, count| %>
+<ol class="list-group " href="#" class="list-group-item list-group-item-action" style="margin: 0 auto; padding-top: 28px; padding-left: 500px; padding-right: 500px; font-family: Lucida Console, Courier New, monospace;">
+  <li class="list-group-item d-flex justify-content-between align-items-start"  href = "/city1" >
+    <div class="ms-2 me-auto">
+      <%= link_to name ,city1_path(city_name: name) , class:"navbar-brand" %>
+    </div>
+    <span class="badge bg-primary rounded-pill"><%= count %></span>
+  </li>
+</ol>  
+<%end %>
+
+<%= render "footer" %>
+
