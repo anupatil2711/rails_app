@@ -1,9 +1,13 @@
 <%= render "header"  %>
-<% @city1_details.each do |d| %> 
-  <div class="card" style=" width: 18rem; ">
+<% @city_details.each do |d| %> 
+  <div class="card" style=" width: 18rem; margin: 0 auto; margin-top: 30px;">
   	<div class="card-body">
     	<h5 class="card-title">Order details</h5>
-    	<p class="card-text"><%= d %></p>
+      <%#debugger %>
+    	<p class="card-text"><h6>First Name:   <%= d["first_name"] %></h6></p>
+      <p class="card-text"><h6>Last Name:   <%= d["last_name"] %></h6></p>
+      <p class="card-text"><h6>City:  <%= d["city"] %></h6></p>
+      <p class="card-text"><h6>Country:  <%= d["country"] %></h6></p>
     	<%= link_to "Go Back",root_path , class:"btn btn-primary" %>
   	</div>
   </div>
