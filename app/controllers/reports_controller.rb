@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
 	def index
+		http_basic_authenticate_with :name => "user", :password => "password"
 		require 'net/http'
 		require 'uri'
 		require 'json'
