@@ -1,79 +1,31 @@
-<%#= render "header" %>
+<%= render "header" %>
 
-<!-- <h1 style="margin-left: 20px; padding-top: 30px; font-family: Monaco;">Report to display city and its orders count and horizontal bar chart to show sales analysis...</h1>
+<h1 style="margin-left: 20px; padding-top: 30px; font-family: Monaco;">Report to display city and its orders count and horizontal bar chart to show sales analysis...</h1>
 <div class="container" style="width: 40%; margin-top: 50px; margin-left: 30px;">
   
-    <table  class="table  text-center table-bordered table-hover table-responsive "  style=" font-family: Lucida Console, Courier New, monospace;">
-      <thead >
+    <table  class="table  table-bordered table-hover table-responsive "  style=" font-family: Lucida Console, Courier New, monospace;">
+      <thead class="table-dark">
         <tr>
           <th scope="col" >Names</th>
           <th scope="col">Count</th>
         </tr>
       </thead>
-      <%# @city.each do |name, count| %>
+      <% @city.each do |name, count| %>
       <tbody>
         <tr>
-          <td><%#= name %></td>
-          <td ><%#= count %></td>
+          <td><%= name %></td>
+          <td ><%= count %></td>
         </tr>
       </tbody>
-      <%#end %>
+      <%end %>
     </table>
-</div> -->
+</div> 
 
-<!-- <div style="width: 40%; margin-top: -420px; margin-left: 680px;">
+ <div style="width: 40%; margin-top: -420px; margin-left: 680px;">
 
 <%#= bar_chart ({"Pune"=>3, "Anjuna"=>2, "Nandur Shingote"=>1, "Pimpri-Chinchwad"=>1, "Gurugram"=>1, "Nashik"=>1, "Mumbai"=>1, "Panaji"=>1, "aldona"=>1, "Khed taluka"=>1}) %>
- <%#= bar_chart @city %>
-</div> -->
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"> -->
-</head>
-
-<body>
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Names</th>
-                <th>Count</th>
-            </tr>
-        </thead>
-        <% @city.each do |name, count| %>
-        <tbody>
-            <tr>
-                <td><%= name %></td>
-                <td><%= count %></td>
-            </tr>
-        </tbody>
-         <%end %>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Count</th>
-            </tr>
-        </tfoot>
-    </table>
-    <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-    <script src ='https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js'></script>
-    <script src='https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js'></script>
-
-   <!--  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
-    <script type="text/javascript"> -->
-      <script>
-        $(document).ready(function () {
-          $('#example').DataTable();
-        });
-    </script>
-</body>
-
-</html>
-
+ <%= bar_chart @city %>
+</div> 
 
 <%= render "footer" %>
 
