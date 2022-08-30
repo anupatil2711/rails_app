@@ -1,0 +1,37 @@
+<%= render "header" %>
+
+
+<div class="container" style="width: 90%; margin-top: 30px;">
+<table  class="table text-center table-bordered table-hover table-responsive "  style=" font-family: Lucida Console, Courier New, monospace;">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col" >Order</th> 
+      <th scope="col" >Date</th> 
+      <th scope="col">Customer</th>
+      <th scope="col">Total</th>
+      <th scope="col">Payment status</th>
+      <th scope="col">Fulfillment status</th>
+      <th scope="col">Items</th>
+      <th scope="col">Delivery method</th>
+    </tr>
+  </thead>
+  <% @order_details["orders"].each do |n|  %>
+  <tbody>
+    <tr>
+      <td><%=  n["name"]%></h5></td>
+      <td><%=  n["created_at"].to_date.to_s%></td>
+      <td><%= n["billing_address"]["name"] %></td>
+      <td><%= n["total_price"] %></td>
+      <td><%= n["financial_status"] %></td>
+      <td>unfulfilled <%= n["fulfillment_status"] %></td>
+      <td><%= n["line_items"][0]["quantity"]  %></td>
+      <td>Standard</td>
+    </tr>
+  </tbody>
+ <% end %>
+</table>
+
+</div>
+
+
+

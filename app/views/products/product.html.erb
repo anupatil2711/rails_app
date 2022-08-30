@@ -1,0 +1,25 @@
+<%= render "reports/header"  %>
+<h1 style="margin-left: 20px; padding-top: 30px; font-family: Monaco;">Report to display product and its count</h1>
+<div class="container" style="width: 40%; margin-top: 50px; margin-left: 30px;">
+  
+    <table  class="table  text-center table-bordered table-hover table-responsive "  style=" font-family: Lucida Console, Courier New, monospace;">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" >Product names</th>
+          <th scope="col">Count</th>
+        </tr>
+      </thead>
+      <% @pro_name.each do |name, count| %>
+      <tbody>
+        <tr>
+          <td><%= name %></td>
+          <td><%= count %></td>
+        </tr>
+      </tbody>
+      <%end %>
+    </table>
+</div>
+<div style="width: 48%; margin-top: -320px; margin-left: 600px;">
+
+<%= pie_chart @pro_name %>
+</div>
