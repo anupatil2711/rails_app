@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
 			uri = URI.parse("https://anushkapatil.myshopify.com/admin/api/2022-07/orders.json?status=any")
 			request = Net::HTTP::Get.new(uri)
-			request["X-Shopify-Access-Token"] = "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"
+			request["X-Shopify-Access-Token"] = "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"
 
 			req_options = {  use_ssl: uri.scheme == "https", }
 
@@ -27,13 +27,14 @@ class ProductsController < ApplicationController
 
 	end
 	def main
+		http_basic_authenticate_or_request_with :name => "user", :password => "password"
 		 require 'net/http'
 		 require 'uri'
 		 require 'json'
 
 		 uri = URI.parse("https://anushkapatil.myshopify.com/admin/api/2022-07/orders.json?status=any")
 		 request = Net::HTTP::Get.new(uri)
-		 request["X-Shopify-Access-Token"] = "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"
+		 request["X-Shopify-Access-Token"] = "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"
  		 req_options = {  use_ssl: uri.scheme == "https", }
 		 response = Net::HTTP.start(uri.hostname, uri.port, req_options) { |http| http.request(request) }
 		 response.code
